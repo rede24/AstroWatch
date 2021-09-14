@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:AstroWatch"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+
           <Grid   x:Name="nav_pnl"
                     HorizontalAlignment="Left"
                     Width="65"
@@ -144,8 +144,11 @@
 
                          <local:UserControlIcons Text="Show planets" ImageSource="../Assets/icons8-black-hole-48.png"/>
 
+                    <local:UserControlIcons Text="Exit" ImageSource="../Assets/closeBtn_default.png"/>
 
-                         <!--// Listview items style template //-->
+
+
+                    <!--// Listview items style template //-->
 
 
 
@@ -156,5 +159,5 @@
 
 
           </Grid>
-     </Grid>
+
 </UserControl>

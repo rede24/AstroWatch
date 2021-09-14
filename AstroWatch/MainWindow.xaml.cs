@@ -20,12 +20,12 @@ namespace AstroWatch
      /// </summary>
      public partial class MainWindow : Window
      {
-          public MainWindow()
-          {
-               InitializeComponent();
-               CurrentPage = page;
-               DataContext = new MainViewModel();
-          }
+        public MainWindow()
+        {
+            InitializeComponent();
+            CurrentPage = page;
+            DataContext = this;
+        }
           public static Frame  CurrentPage;
 
 

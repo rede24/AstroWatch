@@ -30,8 +30,7 @@ namespace AstroWatch
 
           void ICommand.Execute(object parameter)
           {
-               string page = parameter as string;
-               MessageBox.Show(page);
+               string page = parameter as string;               
        
                switch (page)
                {
@@ -53,12 +52,14 @@ namespace AstroWatch
                     case "Show planets":
                          MainWindow.CurrentPage.Content =
                        new DangerPage();
-
                          break;
 
+                case "Exit":
+                    App.Current.MainWindow.Close();
+                    break;
 
 
-               }
+            }
 
 
           }
