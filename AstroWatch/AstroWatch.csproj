@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="NavigationCommand.cs" />
     <Compile Include="Pages\DangerPage.xaml.cs">
       <DependentUpon>DangerPage.xaml</DependentUpon>
@@ -83,6 +84,7 @@
     <Compile Include="UserControls\UserControlIcons.xaml.cs">
       <DependentUpon>UserControlIcons.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

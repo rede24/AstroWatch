@@ -9,6 +9,11 @@ namespace UnitTesting
           [TestMethod]
           public void TestMethod1()
           {
+            var dal = new DAL.Dal();
+                var res = dal.GetImageOfTheDayFromNASAApi().Result;
+            int b = 1; ;
+          
+
           }
      }
 }
