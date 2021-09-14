@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AstroWatch
+namespace AstroWatch.Pages
 {
      /// <summary>
-     /// Interaction logic for MainWindow.xaml
+     /// Interaction logic for Search.xaml
      /// </summary>
-     public partial class MainWindow : Window
+     public partial class Search : Page
      {
-          public MainWindow()
+          public Search()
           {
                InitializeComponent();
-               CurrentPage = page;
-               DataContext = new MainViewModel();
           }
-          public static Frame  CurrentPage;
-
-
-
-        private void CloseBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-    }
+     }
 }

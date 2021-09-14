@@ -20,26 +20,24 @@ namespace AstroWatch
     /// </summary>
     public partial class UserControlIcons : UserControl
     {
+         
         public UserControlIcons()
         {
             InitializeComponent();
-            this.DataContext = this;
-            
+           
+           DataContext = this                  ;
+             com = new  NavigationCommand();
         }
+          public ICommand com { get; set; }
 
 
-        public string Text { get; set; }
+          public string Text { get; set; }
         public string ImageSource { get; set; }
-        
+
+       
+
+       
 
 
-        //public static DependencyProperty DisplayNameProperty = DependencyProperty.Register("DisplayName", typeof(string), typeof(UserControlIcons));
-        //public string DisplayName
-        //{
-        //    get { return (string)GetValue(DisplayNameProperty); }
-        //    set { SetValue(DisplayNameProperty, value); }
-        //}
-
-
-    }
+     }
 }

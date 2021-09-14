@@ -63,13 +63,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UserControlIcons.xaml.cs">
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="NavigationCommand.cs" />
+    <Compile Include="Pages\DangerPage.xaml.cs">
+      <DependentUpon>DangerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SolarSystem.xaml.cs">
+      <DependentUpon>SolarSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavPanel.xaml.cs">
+      <DependentUpon>NavPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlIcons.xaml.cs">
       <DependentUpon>UserControlIcons.xaml</DependentUpon>
     </Compile>
-    <Page Include="CustomListViewItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,18 +91,35 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CustomListViewItem.xaml.cs">
-      <DependentUpon>CustomListViewItem.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="styles.xaml">
+    <Page Include="Pages\DangerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlIcons.xaml">
+    <Page Include="Pages\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SolarSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NavPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlIcons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +163,15 @@
     <Resource Include="Assets\img_signout.png" />
     <Resource Include="Assets\tgBtn_default.png" />
     <Resource Include="Assets\tgBtn_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons8-orbit-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons8-black-hole-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons8-astronomy-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.2.1-ci8\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.2.1-ci8\build\MaterialDesignThemes.targets')" />

@@ -4,7 +4,7 @@
     <!--// Toggle Button Style Template //-->
 
     <ImageBrush x:Key="tb_mouse_over"
-                    ImageSource="Assets/tgBtn_MouseOver.png"/>
+                    ImageSource="../Assets/tgBtn_MouseOver.png"/>
 
     <!--// Text font style //-->
 
@@ -102,7 +102,7 @@
 
     <!--// App Close Button Style Template //-->
 
-    <ImageBrush x:Key="CloseBtn_MouseOver" ImageSource="Assets/closeBtn_MouseOver.png"/>
+    <ImageBrush x:Key="CloseBtn_MouseOver" ImageSource="../Assets/closeBtn_MouseOver.png"/>
 
     <Style x:Key="Close_btn" TargetType="{x:Type Button}">
 

@@ -16,23 +16,18 @@ using System.Windows.Shapes;
 namespace AstroWatch
 {
      /// <summary>
-     /// Interaction logic for MainWindow.xaml
+     /// Interaction logic for NavPanel.xaml
      /// </summary>
-     public partial class MainWindow : Window
+     public partial class NavPanel : UserControl
      {
-          public MainWindow()
+          public NavPanel()
           {
                InitializeComponent();
-               CurrentPage = page;
-               DataContext = new MainViewModel();
+                
           }
-          public static Frame  CurrentPage;
 
+  
 
-
-        private void CloseBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-    }
+      
+     }
 }
