@@ -22,7 +22,7 @@ namespace AstroWatch
      {
           public HomePage()
           {
-               InitializeComponent();
+               InitializeComponent() ;
           }
      }
 }
