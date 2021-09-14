@@ -40,38 +40,7 @@
                     <Frame  Name="page" Source="pages/HomePage.xaml" />
 
             </Grid>
-            <!--// App Close Button //-->
-          <Grid>
 
-               <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="30"/>
-               </Grid.ColumnDefinitions>
-
-               <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="*"/>
-               </Grid.RowDefinitions>
-
-               <Button x:Name="CloseBtn"
-                        Grid.Column="1"
-                        Grid.Row="1"
-                        Height="40"
-                        Width="40"
-                        BorderThickness="0"
-                        Style="{StaticResource Close_btn}" Click="CloseBtn_Click">
-
-                    <Button.Background>
-
-                         <ImageBrush ImageSource="/Assets/closeBtn_default.png"/>
-
-                    </Button.Background>
-
-               </Button>
-
-          </Grid>
           <uc:NavPanel />
      </Grid>
 
