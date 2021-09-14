@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroWatch", "AstroWatch\AstroWatch.csproj", "{6FDCA3FB-08FA-4F7E-B9A8-6E711A0BD1EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{4823874E-029A-4707-A268-A6B4327313FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{0A56DB15-0C29-477E-A196-B4D25B4A74B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6FDCA3FB-08FA-4F7E-B9A8-6E711A0BD1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FDCA3FB-08FA-4F7E-B9A8-6E711A0BD1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FDCA3FB-08FA-4F7E-B9A8-6E711A0BD1EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4823874E-029A-4707-A268-A6B4327313FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4823874E-029A-4707-A268-A6B4327313FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4823874E-029A-4707-A268-A6B4327313FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4823874E-029A-4707-A268-A6B4327313FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A56DB15-0C29-477E-A196-B4D25B4A74B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A56DB15-0C29-477E-A196-B4D25B4A74B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A56DB15-0C29-477E-A196-B4D25B4A74B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A56DB15-0C29-477E-A196-B4D25B4A74B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
