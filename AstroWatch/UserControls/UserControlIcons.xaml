@@ -6,17 +6,17 @@
              xmlns:local="clr-namespace:AstroWatch"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-        <!--// Contacts //-->
 
-        <ListViewItem   HorizontalAlignment="Left"
+    <!--// Contacts //-->
+
+    <!--<ListViewItem   HorizontalAlignment="Left"
                                       Margin="0,0,0,15" 
-                                      >
-          <Button Background="Transparent" Command="{Binding com}" CommandParameter="{Binding Path=Text ,ElementName=pageName }">
-               <StackPanel Orientation="Horizontal"
+                                      >-->
+        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" Command="{Binding com}" CommandParameter="{Binding Path=Text ,ElementName=pageName }">
+            <StackPanel Orientation="Horizontal"
                                         Width="230">
-               
-               <Image Source="{Binding ImageSource}"
+
+                <Image Source="{Binding ImageSource}"
                                        Stretch="Fill"
                                        VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
@@ -25,19 +25,19 @@
                                            Style="{StaticResource font_style}"/>
 
             </StackPanel>
-     </Button>
+        </Button>
 
-               <!--// Tooltip //-->
+        <!--// Tooltip //-->
 
-            <ListViewItem.ToolTip>
+        <!--<ListViewItem.ToolTip>
 
-                <ToolTip x:Name="tt_contacts"
+            <ToolTip x:Name="tt_contacts"
                                          Content="{Binding Text}"
                                          Style="{StaticResource tt_style}"/>
 
-            </ListViewItem.ToolTip>
+        </ListViewItem.ToolTip>
 
-        </ListViewItem>
+    </ListViewItem>-->
 
 
 </UserControl>

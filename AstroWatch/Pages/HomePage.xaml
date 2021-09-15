@@ -9,7 +9,6 @@
       Title="testpage">
 
     <Grid Background="Wheat">
-         
-        
+        <Image x:Name="image" Source="{Binding urlImage}" MouseWheel="image_MouseWheel" />
     </Grid>
 </Page>
