@@ -84,7 +84,7 @@
     <Compile Include="UserControls\UserControlIcons.xaml.cs">
       <DependentUpon>UserControlIcons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

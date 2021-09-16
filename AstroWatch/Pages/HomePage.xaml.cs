@@ -38,18 +38,26 @@ namespace AstroWatch
             var matrix = image.RenderTransform.Value;
 
             numberOfZoom += e.Delta;
-            if (numberOfZoom == 0)
-            {
-                matrix = transform.Value;
-            }
-            else if (e.Delta > 0)
-            {
-                matrix.ScaleAt(1.5, 1.5, e.GetPosition(this).X, e.GetPosition(this).Y);
-            }
-            else
-            {
-                matrix.ScaleAt(1.0 / 1.5, 1.0 / 1.5, e.GetPosition(this).X, e.GetPosition(this).Y);
-            }
+
+               if (numberOfZoom == 0)
+               {
+                    matrix = transform.Value;
+
+               }
+               else if (numberOfZoom < 0)
+               {
+                    numberOfZoom = 0;
+                    return;
+               }
+
+               else if (e.Delta > 0)
+               {
+                    matrix.ScaleAt(1.5, 1.5, e.GetPosition(this).X, e.GetPosition(this).Y);
+               }
+               else
+               {
+                    matrix.ScaleAt(1.0 / 1.5, 1.0 / 1.5, e.GetPosition(this).X, e.GetPosition(this).Y);
+               }
 
             image.RenderTransform = new MatrixTransform(matrix);
         }
