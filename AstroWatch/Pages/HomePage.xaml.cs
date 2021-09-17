@@ -28,7 +28,6 @@ namespace AstroWatch
         {
             InitializeComponent();
             DataContext = ViewModel;
-
             transform = new MatrixTransform(image.RenderTransform.Value); // init matrix to default location
         }
 

@@ -11,7 +11,7 @@ namespace UnitTesting
           {
             var dal = new DAL.Dal();
                 var res = dal.GetImageOfTheDayFromNASAApi().Result;
-            int b = 1; ;
+            Assert.IsNotNull(res.url);
           
 
           }

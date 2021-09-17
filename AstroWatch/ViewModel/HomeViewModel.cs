@@ -21,7 +21,25 @@ namespace AstroWatch.ViewModel
             get
             {
                 return Task.Run(() => model.imageOfTheDay).Result.url;
+                
             }
-        }      
+        }
+
+        public string Title
+        {
+            get
+            {
+                return Task.Run(() => model.imageOfTheDay).Result.title;
+            }
+        }
+
+        public string Explanation
+        {
+            get
+            {
+                return Task.Run(() => model.imageOfTheDay).Result.explanation;
+            }
+        }
+        
     }
 }
