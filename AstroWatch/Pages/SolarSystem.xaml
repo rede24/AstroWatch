@@ -9,14 +9,17 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SolarSystem">
 
-    <Grid>
-          <usercontrols:CarouselControl Grid.Row="1" Grid.ColumnSpan="2" x:Name="ExampleCarouselControl" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected">
-               <Image Source="../Assets/icons8-orbit-60.png"></Image>
+     <Grid>
+   
+          
+          <usercontrols:CarouselControl  Width="600" Height="0" Grid.Row="1" LookDownOffset="30"  x:Name="ExampleCarouselControl"  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected"  >
+               <Image Source="../Assets/earth.png" Width="100" Height=" 100"></Image>
                <Image Source="../Assets/icons8-orbit-60.png"></Image>
                <Image Source="../Assets/icons8-orbit-60.png"></Image>
                <Image Source="../Assets/icons8-orbit-60.png"></Image>
                <Image Source="../Assets/icons8-orbit-60.png"></Image>
           </usercontrols:CarouselControl>
+         
 
      </Grid>
 </Page>

@@ -23,6 +23,10 @@ namespace AstroWatch.Pages
           public SolarSystem()
           {
                InitializeComponent();
+            //   ExampleCarouselControl.Width = 600;
+            //   ExampleCarouselControl.Height = 0;
+             //  ExampleCarouselControl.ReInitialize();
+
           }
           #region Carousel
 

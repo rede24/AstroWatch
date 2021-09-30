@@ -50,7 +50,7 @@ namespace AstroWatch.UserControls
                }
           }
 
-          private const double DEFAULT_ROTATION_SPEED = 200;
+          private const double DEFAULT_ROTATION_SPEED = 100;
           private const double MINIMUM_ROTATION_SPEED = 1;
           private const double MAXIMUM_ROTATION_SPEED = 1000;
           private double _rotationSpeed = DEFAULT_ROTATION_SPEED;
@@ -67,7 +67,7 @@ namespace AstroWatch.UserControls
                }
           }
 
-          private const double DEFAULT_LOOKDOWN_OFFSET = 0;
+          private const double DEFAULT_LOOKDOWN_OFFSET = 50;
           private const double MINIMUM_LOOKDOWN_OFFSET = -100;
           private const double MAXIMUM_LOOKDOWN_OFFSET = 100;
           private double _lookdownOffset = DEFAULT_LOOKDOWN_OFFSET;
