@@ -76,6 +76,7 @@
     <Compile Include="Pages\SolarSystem.xaml.cs">
       <DependentUpon>SolarSystem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CarouselControl.cs" />
     <Compile Include="UserControls\NavPanel.xaml.cs">
       <DependentUpon>NavPanel.xaml</DependentUpon>
     </Compile>
