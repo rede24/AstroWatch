@@ -9,17 +9,31 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SolarSystem">
 
-     <Grid>
-   
-          
-          <usercontrols:CarouselControl  Width="600" Height="0" Grid.Row="1" LookDownOffset="30"  x:Name="ExampleCarouselControl"  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected"  >
-               <Image Source="../Assets/earth.png" Width="100" Height=" 100"></Image>
-               <Image Source="../Assets/icons8-orbit-60.png"></Image>
-               <Image Source="../Assets/icons8-orbit-60.png"></Image>
-               <Image Source="../Assets/icons8-orbit-60.png"></Image>
-               <Image Source="../Assets/icons8-orbit-60.png"></Image>
-          </usercontrols:CarouselControl>
-         
+    <Grid Background="darkslategray">
 
-     </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+          
+          <usercontrols:CarouselControl  Width="600" Height="0" Grid.Row="0" x:Name="ExampleCarouselControl"  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected"  >
+            <Image Source="../Assets/Planets/earth.png" Width="100" Height=" 100"></Image>
+            <Image Source="../Assets/Planets/Jupiter.png" Width="100" Height=" 100"></Image>
+            <Image Source="../Assets/Planets/Mercury.png" Width="100" Height=" 100"></Image>
+            <Image Source="../Assets/Planets/Neptune.png" Width="100" Height=" 100"></Image>
+            <Image Source="../Assets/Planets/Saturn.png" Width="100" Height=" 100"></Image>
+            <Image Source="../Assets/Planets/Mars.png" Width="100" Height=" 100"></Image>
+            <Image Source="../Assets/Planets/Uranus.png" Width="100" Height=" 100"></Image>
+            <Image Source="../Assets/Planets/Venus.png" Width="100" Height=" 100"></Image>
+
+        </usercontrols:CarouselControl>
+        <StackPanel Grid.Row="1">
+            <TextBlock  VerticalAlignment="Center"  Foreground="Black" FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="1" Text="Jupiter" FontSize="24" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia"/>
+            <ScrollViewer Grid.Row="2">
+                <TextBlock Padding="10" Grid.Row="2" TextWrapping="Wrap" FontSize="14" Text="Description..." FontFamily="Copperplate Gothic Light" FontStyle="Italic" Opacity="0.6"/>
+            </ScrollViewer>
+
+        </StackPanel>
+
+    </Grid>
 </Page>

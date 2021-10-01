@@ -12,6 +12,7 @@
         ResizeMode="NoResize"
         Topmost="False"
         WindowStyle="None"
+        WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"

@@ -188,7 +188,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\earth.png" />
+    <Resource Include="Assets\Planets\Earth.png" />
+    <Resource Include="Assets\Planets\Jupiter.png" />
+    <Resource Include="Assets\Planets\Mars.png" />
+    <Resource Include="Assets\Planets\Mercury.png" />
+    <Resource Include="Assets\Planets\Neptune.png" />
+    <Resource Include="Assets\Planets\Saturn.png" />
+    <Resource Include="Assets\Planets\Uranus.png" />
+    <Resource Include="Assets\Planets\Venus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.2.1-ci8\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.2.1-ci8\build\MaterialDesignThemes.targets')" />
