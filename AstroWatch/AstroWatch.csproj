@@ -65,7 +65,8 @@
     </ApplicationDefinition>
     <Compile Include="Converters\ConverterterSourceToVisible.cs" />
     <Compile Include="MainViewModel.cs" />
-    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\ModelHome.cs" />
+    <Compile Include="Model\ModelSolarSystem.cs" />
     <Compile Include="NavigationCommand.cs" />
     <Compile Include="Pages\DangerPage.xaml.cs">
       <DependentUpon>DangerPage.xaml</DependentUpon>
@@ -87,6 +88,7 @@
       <DependentUpon>UserControlIcons.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\SolarSystemViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

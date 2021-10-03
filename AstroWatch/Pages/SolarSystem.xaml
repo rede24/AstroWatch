@@ -16,21 +16,20 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
           
-          <usercontrols:CarouselControl  Width="600" Height="0" Grid.Row="0" x:Name="ExampleCarouselControl"  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected"  >
-            <Image Source="../Assets/Planets/earth.png" Width="100" Height=" 100"></Image>
-            <Image Source="../Assets/Planets/Jupiter.png" Width="100" Height=" 100"></Image>
-            <Image Source="../Assets/Planets/Mercury.png" Width="100" Height=" 100"></Image>
-            <Image Source="../Assets/Planets/Neptune.png" Width="100" Height=" 100"></Image>
-            <Image Source="../Assets/Planets/Saturn.png" Width="100" Height=" 100"></Image>
-            <Image Source="../Assets/Planets/Mars.png" Width="100" Height=" 100"></Image>
-            <Image Source="../Assets/Planets/Uranus.png" Width="100" Height=" 100"></Image>
-            <Image Source="../Assets/Planets/Venus.png" Width="100" Height=" 100"></Image>
-
+          <usercontrols:CarouselControl  Width="1000" Height="0" Grid.Row="0" x:Name="ExampleCarouselControl"  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected"  >
+            <Image Name="Mercury" Source="../Assets/Planets/Mercury.png" Width="100" Height=" 100"></Image>
+            <Image Name="Venus" Source="../Assets/Planets/Venus.png" Width="100" Height=" 100"></Image>
+            <Image Name="Earth" Source="../Assets/Planets/earth.png" Width="100" Height=" 100"></Image>
+            <Image Name="Mars" Source="../Assets/Planets/Mars.png" Width="100" Height=" 100"></Image>
+            <Image Name="Jupiter" Source="../Assets/Planets/Jupiter.png" Width="100" Height=" 100"></Image>
+            <Image Name="Saturn" Source="../Assets/Planets/Saturn.png" Width="100" Height=" 100"></Image>
+            <Image Name="Uranus" Source="../Assets/Planets/Uranus.png" Width="100" Height=" 100"></Image>
+            <Image Name="Neptune" Source="../Assets/Planets/Neptune.png" Width="100" Height=" 100"></Image>
         </usercontrols:CarouselControl>
         <StackPanel Grid.Row="1">
-            <TextBlock  VerticalAlignment="Center"  Foreground="Black" FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="1" Text="Jupiter" FontSize="24" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia"/>
+            <TextBlock Name="currentPlanetTextBlock"  VerticalAlignment="Center"  Foreground="Black" FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="1" Text="Jupiter" FontSize="24" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia"/>
             <ScrollViewer Grid.Row="2">
-                <TextBlock Padding="10" Grid.Row="2" TextWrapping="Wrap" FontSize="14" Text="Description..." FontFamily="Copperplate Gothic Light" FontStyle="Italic" Opacity="0.6"/>
+                <TextBlock Padding="10" Grid.Row="2" TextWrapping="Wrap" FontSize="14" Text="{Binding DescriptionPlanet}" FontFamily="Copperplate Gothic Light" FontStyle="Italic" Opacity="0.6"/>
             </ScrollViewer>
 
         </StackPanel>

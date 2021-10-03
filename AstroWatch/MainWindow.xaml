@@ -21,7 +21,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}">
 
-    <Grid>
+    <Grid Background="darkslategray">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>

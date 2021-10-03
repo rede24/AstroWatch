@@ -59,7 +59,6 @@ namespace AstroWatch.UserControls
                get
                {
                     return _rotationSpeed;
-
                }
                set
                {

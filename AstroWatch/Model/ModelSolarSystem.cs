@@ -5,19 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL
+namespace AstroWatch.Model
 {
-    public class Bl
+    public class ModelSolarSystem
     {
-        DAL.Dal dal = new DAL.Dal();
-        public async Task<ImageOfTheDay> GetImageOfTheDay()
+        BL.Bl bl;
+        public ModelSolarSystem()
         {
-            return await dal.GetImageOfTheDayFromNASAApi();
+            bl = new BL.Bl();
         }
 
         public string getDescriptionPlanet(Planets nameOfPlanet)
         {
-            return dal.getDescriptionPlanet(nameOfPlanet);
+            return bl.getDescriptionPlanet(nameOfPlanet);
         }
     }
 }

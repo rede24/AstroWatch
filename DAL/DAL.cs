@@ -11,11 +11,11 @@ namespace DAL
 {
     public class Dal
     {
-          const string APIKEY = "js4BJax4nac2gMLpPtK0IUEOHg5uDyPsLT5dcFGh";
-          public async Task<ImageOfTheDay> GetImageOfTheDayFromNASAApi()
-          {
+        const string APIKEY = "js4BJax4nac2gMLpPtK0IUEOHg5uDyPsLT5dcFGh";
+        public async Task<ImageOfTheDay> GetImageOfTheDayFromNASAApi()
+        {
             ImageOfTheDay myDeserializedClass = null;
-            string request = $"https://api.nasa.gov/planetary/apod?api_key={APIKEY}";            
+            string request = $"https://api.nasa.gov/planetary/apod?api_key={APIKEY}";
 
 
             // Create a New HttpClient object.
@@ -32,7 +32,7 @@ namespace DAL
 
                 myDeserializedClass = JsonConvert.DeserializeObject<ImageOfTheDay>(responseBody);
 
-                
+
             }
             catch (HttpRequestException e)
             {
@@ -45,6 +45,32 @@ namespace DAL
             client.Dispose();
 
             return myDeserializedClass;
+        }
+
+        public string getDescriptionPlanet(Planets nameOfPlanet)
+        {
+            switch (nameOfPlanet)
+            {
+                case Planets.Mercury:
+                    return "aaaa";                    
+                case Planets.Venus:
+                    return "bbb";                    
+                case Planets.Earth:
+                    return "ccc";
+                case Planets.Mars:
+                    return "ddd";
+                case Planets.Jupiter:
+                    return "eee";
+                case Planets.Saturn:
+                    return "fff";
+                case Planets.Uranus:
+                    return "ggg";
+                case Planets.Neptune:
+                    return "hhh";                    
+
+                default:
+                    return "default";
+            }
         }
     }
 }
