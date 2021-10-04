@@ -20,7 +20,7 @@ namespace AstroWatch.ViewModel
             collectionUrlImages = searchModel.GetSearchResult(search).Result;            
         }
 
-        public List<string> collectionUrlImages { get; set; }
+        public Dictionary<string, string> collectionUrlImages { get; set; }
 
     }
 }

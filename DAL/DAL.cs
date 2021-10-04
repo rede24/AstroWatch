@@ -1,19 +1,21 @@
 ﻿using BE;
 using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Dal 
+    public class Dal
     {
         const string APIKEY = "js4BJax4nac2gMLpPtK0IUEOHg5uDyPsLT5dcFGh";
         public async Task<ImageOfTheDay> GetImageOfTheDayFromNASAApi()
-        {      
+        {
             string request = $"https://api.nasa.gov/planetary/apod?api_key={APIKEY}";
             var res = await Util<ImageOfTheDay>.PerformHttpRequest(request);
             return res;
@@ -24,9 +26,9 @@ namespace DAL
             switch (nameOfPlanet)
             {
                 case Planets.Mercury:
-                    return "aaaa";                    
+                    return "aaaa";
                 case Planets.Venus:
-                    return "bbb";                    
+                    return "bbb";
                 case Planets.Earth:
                     return "ccc";
                 case Planets.Mars:
@@ -38,36 +40,53 @@ namespace DAL
                 case Planets.Uranus:
                     return "ggg";
                 case Planets.Neptune:
-                    return "hhh";                    
+                    return "hhh";
 
                 default:
                     return "default";
             }
         }
 
-        public async Task<List<string>> GetSearchResult(string search)
-        {            
+        public async Task<Dictionary<string, string>> GetSearchResult(string search)
+        {
             string request = $"https://images-api.nasa.gov/search?q={search}";
             var res = await Util<SearchResult>.PerformHttpRequest(request);
-            List<string> links = new List<string>();
+            Dictionary<string, string> valuePairs = new Dictionary<string, string>();
             foreach (Item i in res.collection.items)
             {
-                if (links.Count==10)
+                if (i.links != null)
                 {
-                    break;
+                    valuePairs.Add(i.links.FirstOrDefault().href, i.data[0].description);
                 }
-               var res2 = await Util<List<string>>.PerformHttpRequest(i.href);
-                if (res2 != null)
-                    links.Add(res2[2]);
             }
-            return links;
-
+            return valuePairs;
 
         }
-       
-   
-        
+
+
+        public TagResult TagImage(string urlImage)
+        {
+            string apiKey = "acc_dfa7a0e1220a57d";
+            string apiSecret = "5f7ee7c67cf6cfb641b93e0cd2f9e3ba";
+
+
+            string basicAuthValue = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(String.Format("{0}:{1}", apiKey, apiSecret)));
+
+            var client = new RestClient(String.Format("https://api.imagga.com/v2/tags"));
+            client.Timeout = -1;
+
+            var request = new RestRequest(Method.GET);
+            request.AddParameter("image_url", urlImage);
+            request.AddHeader("Authorization", String.Format("Basic {0}", basicAuthValue));
+
+            IRestResponse response = client.Execute(request);
+            var tagResult = JsonConvert.DeserializeObject<TagResult>(response.Content);
+
+
+            return tagResult;
         }
+
+    }
     class Util<T> {
         public static async Task<T> PerformHttpRequest(String requestLink)
     {

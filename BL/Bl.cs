@@ -20,9 +20,28 @@ namespace BL
             return dal.getDescriptionPlanet(nameOfPlanet);
         }
 
-        public async Task<List<string>> GetSearchResult(string search)
+        public async Task<Dictionary<string, string>> GetSearchResult(string search)
         {
-            return await dal.GetSearchResult(search);
+
+            Dictionary<string, string> listImagesAndDescription = await dal.GetSearchResult(search);
+            Dictionary<string, string> res = new Dictionary<string, string>();
+            Parallel.ForEach(listImagesAndDescription.Keys, image =>
+             {
+                 TagResult tag = dal.TagImage(image);
+                 if (tag.result != null)
+                 {
+                     if (tag.result.tags.Any((x) => x.confidence > 80.0 && x.tag.en == "planet"))
+                     {
+                         res.Add(image, listImagesAndDescription[image]);
+                     }
+
+                 }
+
+
+
+             });
+
+            return res;
         }
     }
 }

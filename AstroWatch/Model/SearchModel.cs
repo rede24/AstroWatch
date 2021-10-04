@@ -14,7 +14,7 @@ namespace AstroWatch.Model
         {
             bl = new BL.Bl();
         }
-        public async Task<List<string>> GetSearchResult(string search)
+        public async Task<Dictionary<string, string>> GetSearchResult(string search)
         {
             return await bl.GetSearchResult(search);
         }
