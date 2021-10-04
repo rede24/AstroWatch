@@ -9,6 +9,20 @@
       Title="Search">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <Grid  Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Button Name="btSearch" Height="auto" Grid.Column="0"   Content="SEARCH" Click="btSearch_Click"   />
+            <TextBox Name="txtSearch" Grid.Column="1" HorizontalAlignment="Stretch" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+        </Grid>
     </Grid>
 </Page>

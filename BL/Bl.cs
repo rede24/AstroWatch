@@ -19,5 +19,10 @@ namespace BL
         {
             return dal.getDescriptionPlanet(nameOfPlanet);
         }
+
+        public async Task<List<string>> GetSearchResult(string search)
+        {
+            return await dal.GetSearchResult(search);
+        }
     }
 }

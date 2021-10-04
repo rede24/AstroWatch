@@ -52,6 +52,10 @@ namespace DAL
             List<string> links = new List<string>();
             foreach (Item i in res.collection.items)
             {
+                if (links.Count==10)
+                {
+                    break;
+                }
                var res2 = await Util<List<string>>.PerformHttpRequest(i.href);
                 if (res2 != null)
                     links.Add(res2[2]);
