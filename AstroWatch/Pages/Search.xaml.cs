@@ -28,18 +28,35 @@ namespace AstroWatch.Pages
             InitializeComponent();
             searchViewModel = new SearchViewModel();
             DataContext = searchViewModel;
+
+
+
+
+
+
+
+            
         }
 
         private void btSearch_Click(object sender, RoutedEventArgs e)
         {
             var text = txtSearch.Text;
-           var thread = new Thread(() =>
+            progressBar.Visibility = Visibility.Visible;
+            var thread = new Thread(() =>
             {
                 searchViewModel.GetSearchResult(text);
-                MessageBox.Show(searchViewModel.collectionUrlImages.Count.ToString());
+                
+
+                //searchViewModel.collectionUrlImages = new Dictionary<string, string>();
+                //searchViewModel.collectionUrlImages.Add("aaa", "bbb");
+                //searchViewModel.collectionUrlImages.Add("ccc", "ddd");
+                this.Dispatcher.BeginInvoke(new Action(() => {
+
+                Resources["CollectionUrlImages"] = searchViewModel.collectionUrlImages;
+                    progressBar.Visibility = Visibility.Collapsed;
+                }));
             });
             thread.Start();
-            
         }
     }
 }

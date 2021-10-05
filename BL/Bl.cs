@@ -25,23 +25,24 @@ namespace BL
 
             Dictionary<string, string> listImagesAndDescription = await dal.GetSearchResult(search);
             Dictionary<string, string> res = new Dictionary<string, string>();
-            Parallel.ForEach(listImagesAndDescription.Keys, image =>
-             {
-                 TagResult tag = dal.TagImage(image);
-                 if (tag.result != null)
-                 {
-                     if (tag.result.tags.Any((x) => x.confidence > 80.0 && x.tag.en == "planet"))
-                     {
-                         res.Add(image, listImagesAndDescription[image]);
-                     }
+            //Parallel.ForEach(listImagesAndDescription.Keys, image =>
+            // {
+            //     TagResult tag = dal.TagImage(image);
+            //     if (tag.result != null)
+            //     {
+            //         if (tag.result.tags.Any((x) => x.confidence > 80.0 && x.tag.en == "planet"))
+            //         {
+            //             res.Add(image, listImagesAndDescription[image]);
+            //         }
 
-                 }
+            //     }
 
 
 
-             });
+            // });
+          
 
-            return res;
+            return listImagesAndDescription;
         }
     }
 }

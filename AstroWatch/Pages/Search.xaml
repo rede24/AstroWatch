@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:AstroWatch.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
       Title="Search">
 
     <Grid>
@@ -22,7 +23,70 @@
 
 
             <Button Name="btSearch" Height="auto" Grid.Column="0"   Content="SEARCH" Click="btSearch_Click"   />
-            <TextBox Name="txtSearch" Grid.Column="1" HorizontalAlignment="Stretch" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+            <TextBox Background="White" materialDesign:HintAssist.Hint="Search" Foreground="{DynamicResource PrimaryHueLightBrush}" Opacity="0.4" FontSize="40" Style="{DynamicResource MaterialDesignFloatingHintTextBox}"   Name="txtSearch" Grid.Column="1" HorizontalAlignment="Stretch"/>
         </Grid>
+        
+        
+        
+        <!--
+-->
+        <ProgressBar HorizontalAlignment="Stretch" Height="40" Name="progressBar" Grid.Row="1" Visibility="Collapsed" IsIndeterminate="True" VerticalAlignment="Center"/>
+        <Grid Margin="10" Grid.Row="1">
+            <ListBox ItemsSource="{DynamicResource CollectionUrlImages}" Grid.IsSharedSizeScope="True">
+                <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+
+                        <materialDesign:Flipper
+  Style="{StaticResource MaterialDesignCardFlipper}">
+                            <materialDesign:Flipper.FrontContent>
+                                <Button
+      Style="{StaticResource MaterialDesignFlatButton}"
+      Command="{x:Static materialDesign:Flipper.FlipCommand}"
+      Margin="8"
+                                    Height="200"
+      Width="200">
+                                    <Image Source="{Binding Key}"/>
+                                </Button>
+                            </materialDesign:Flipper.FrontContent>
+                            <materialDesign:Flipper.BackContent>
+                                <StackPanel>
+                                <Button     
+      Command="{x:Static materialDesign:Flipper.FlipCommand}"
+      Margin="8"
+                                    Height="200"
+                                    
+      Width="200"
+     >
+                                    <ScrollViewer >
+                                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap"/>
+                                    
+                                    </ScrollViewer>
+                                </Button>
+                                    <Button  Command="{x:Static materialDesign:Flipper.FlipCommand}" Style="{DynamicResource MaterialDesignToolForegroundButton }">
+                                        <materialDesign:PackIcon
+              Kind="ArrowLeft"
+              HorizontalAlignment="Right" />
+                                    </Button> 
+                                    
+                                    </StackPanel>
+                            </materialDesign:Flipper.BackContent>
+                        </materialDesign:Flipper>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+
+
     </Grid>
 </Page>

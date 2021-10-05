@@ -12,7 +12,8 @@ namespace AstroWatch.ViewModel
         SearchModel searchModel;
         public SearchViewModel()
         {
-            searchModel = new SearchModel();            
+            searchModel = new SearchModel();
+            
         }
 
         public void GetSearchResult(string search)
@@ -20,7 +21,20 @@ namespace AstroWatch.ViewModel
             collectionUrlImages = searchModel.GetSearchResult(search).Result;            
         }
 
-        public Dictionary<string, string> collectionUrlImages { get; set; }
+        public Dictionary<string, string> collectionUrlImages { get; set; }//(url herf, Description)
+
+
+        ////////////////
+        
+
+
+
+
+
+
+
+
+
 
     }
 }
