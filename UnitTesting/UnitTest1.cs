@@ -16,11 +16,7 @@ namespace UnitTesting
         [TestMethod]
         public  void TestMethod1()
         {
-            var dal = new DAL.Dal();
-            var res =  DAL.Util<NearEarthObjectRoot>.PerformHttpRequest("http://www.neowsapp.com/rest/v1/feed?start_date=2021-10-05&end_date=2021-10-12&detailed=false&api_key=DEMO_KEY");
-            Task.WaitAll(res);
-            res.Result.near_earth_objects.date.Add[0]
-            int a = 1;
+          
 
 
 
