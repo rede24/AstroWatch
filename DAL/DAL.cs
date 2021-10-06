@@ -86,8 +86,10 @@ namespace DAL
             return tagResult;
         }
 
+
+
     }
-    class Util<T> {
+     public class Util<T> {
         public static async Task<T> PerformHttpRequest(String requestLink)
     {
         T searchResult = default(T);

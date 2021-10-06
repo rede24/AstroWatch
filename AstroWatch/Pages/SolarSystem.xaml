@@ -27,7 +27,7 @@
             <Image Name="Neptune" Source="../Assets/Planets/Neptune.png" Width="100" Height=" 100"></Image>
         </usercontrols:CarouselControl>
         <StackPanel Grid.Row="1">
-            <TextBlock Name="currentPlanetTextBlock"  VerticalAlignment="Center"  Foreground="Black" FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="1" Text="Jupiter" FontSize="24" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia"/>
+            <TextBlock Name="currentPlanetTextBlock"  VerticalAlignment="Center"  Foreground="Black" FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="1" FontSize="24" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia"/>
             <ScrollViewer Grid.Row="2">
                 <TextBlock Padding="10" Grid.Row="2" TextWrapping="Wrap" FontSize="14" Text="{Binding DescriptionPlanet}" FontFamily="Copperplate Gothic Light" FontStyle="Italic" Opacity="0.6"/>
             </ScrollViewer>
