@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NearEarthObject.cs" />
     <Compile Include="Planets.cs" />
     <Compile Include="ImageOfTheDay.cs" />
     <Compile Include="PlanetsDB.cs" />

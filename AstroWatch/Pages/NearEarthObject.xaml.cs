@@ -1,7 +1,11 @@
-﻿using System;
+﻿using AstroWatch.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,9 +24,25 @@ namespace AstroWatch.Pages
      /// </summary>
      public partial class DangerPage : Page
      {
+          NearEarthObjectViewModel vm;
           public DangerPage()
           {
                InitializeComponent();
+               vm = new NearEarthObjectViewModel();
+               DataContext = vm;
+
+          }
+
+          private void Button_Click(object sender, RoutedEventArgs e)
+          {
+               var start = DateTime.Parse(startDate.Text).ToString("yyyy-MM-dd");
+               var end = DateTime.Parse(endDate.Text).ToString("yyyy-MM-dd");
+
+               new Thread(() =>
+               {
+                    vm.SearcjNEO(start, end);
+
+               }).Start();
           }
      }
 }
