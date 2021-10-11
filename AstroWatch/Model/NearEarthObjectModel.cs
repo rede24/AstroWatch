@@ -14,7 +14,7 @@ namespace AstroWatch.Model
 
           public List<NearEarthObject> GetNearEarthObject(string start, string end, double diameter, bool hazardous)
           {
-               return (from s in bl.GetNearEarthObject(start, end).Result
+               return (from s in Task.Run(()=>bl.GetNearEarthObject(start, end)).Result
                       where s.Diameter > diameter && s.Hazardous == hazardous 
                        select s).ToList();
           }

@@ -51,7 +51,7 @@
 
 
           </Grid>
-          <DataGrid AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding NearEarthObj}">
+        <DataGrid AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding Path=NearEarthObj, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
           </DataGrid>
      </Grid>
 </Page>
