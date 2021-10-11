@@ -13,6 +13,22 @@ namespace DAL
 {
      public class Dal
      {
+          public Dal()
+          {
+               using (var dbcontext = new PlanetDB())
+               {
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 1, Description = "TODO", Name = "Mars", Url = "astrowatch-12d3a.appspot.com/Planets/Mars.png" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 2, Description = "TODO", Name = "Earth", Url = "astrowatch-12d3a.appspot.com/Planets/Earth.png" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 3, Description = "TODO", Name = "Neptune", Url = "astrowatch-12d3a.appspot.com/Planets/Neptune.png" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 4, Description = "TODO", Name = "Uranus", Url = "astrowatch-12d3a.appspot.com/Planets/Uranus.png" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 5, Description = "TODO", Name = "Mercury", Url = "astrowatch-12d3a.appspot.com/Planets/Mercury.png" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 6, Description = "TODO", Name = "Jupiter", Url = "astrowatch-12d3a.appspot.com/Planets/Jupiter.png" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 7, Description = "TODO", Name = "Saturn", Url = "astrowatch-12d3a.appspot.com/Planets/Uranus.png" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 8, Description = "TODO", Name = "Venus", Url = "sastrowatch-12d3a.appspot.com/Planets/Venus.png" });
+
+               }
+
+          }
           const string APIKEY = "js4BJax4nac2gMLpPtK0IUEOHg5uDyPsLT5dcFGh";
           public async Task<ImageOfTheDay> GetImageOfTheDayFromNASAApi()
           {
@@ -86,17 +102,25 @@ namespace DAL
                return tagResult;
           }
 
-          public  async Task<NearEarthObjects> GetNearEarthObject(string start ,string end)
+          public async Task<NearEarthObjects> GetNearEarthObject(string start, string end)
           {
 
-           
+
                string link = $"https://api.nasa.gov/neo/rest/v1/feed?start_date={start}&end_date={end}&api_key={APIKEY}";
-               var r =  await  PerformHttpRequest<NearEarthObjects>(link);
+               var r = await PerformHttpRequest<NearEarthObjects>(link);
                return r;
 
 
           }
+          public List<Planet> GetSolarSysytem()
+          {
+              using ( var ctx = new PlanetDB())
+               {
+                   return ctx.SolarSystem.ToList();
 
+
+               }
+          }
           private async Task<T> PerformHttpRequest<T>(String requestLink)
           {
                T searchResult = default(T);
@@ -132,7 +156,7 @@ namespace DAL
                return searchResult;
 
           }
-         
+
           //private async Task<T> GetNearEarthObject<T>(String requestLink)
           //{
           //     T searchResult = default(T);

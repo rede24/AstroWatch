@@ -10,7 +10,7 @@ namespace BE
      public class Planet
 
      {
-          public int ID { get; set; }
+          public int Id { get; set; }
           public string Name { get; set; }
           public string Url { get; set; }
 
@@ -21,8 +21,9 @@ namespace BE
 
      public class PlanetDB : DbContext
      {
-          public PlanetDB() : base("astrowatchdb")
+          public PlanetDB() : base("astrowatchDB")
           {
+              
 
           }
           public DbSet<Planet> SolarSystem { get; set; }
