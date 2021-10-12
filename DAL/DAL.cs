@@ -21,24 +21,24 @@ namespace DAL
                     using (var dbcontext = new PlanetDB())
 
                     {
-                        
-                         
+
+ 
                          if (dbcontext.SolarSystem.ToList().Count == 0)
                          {
 
                               var link = "www.astrowatch-12d3a.appspot.com/Planets/";
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 1, Description = "TODO", Name = "Mars", Url = link + "Mars.png" });
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 2, Description = "TODO", Name = "Earth", Url = link + "Earth.png" });
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 3, Description = "TODO", Name = "Neptune", Url = link + "Neptune.png" });
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 4, Description = "TODO", Name = "Uranus", Url = link + " Uranus.png" });
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 5, Description = "TODO", Name = "Mercury", Url = link + "Mercury.png" });
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 6, Description = "TODO", Name = "Jupiter", Url = link + "Jupiter.png" });
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 7, Description = "TODO", Name = "Saturn", Url = link + "Uranus.png" });
-                              dbcontext.SolarSystem.Add(new Planet() { Id = 8, Description = "TODO", Name = "Venus", Url = link + "Venus.png" });
- dbcontext.SaveChanges();
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 1, Description = "TODO", Name = "Mercury", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FMercury.png?alt=media&token=9368f0bf-89ba-4028-b344-3c4648261be5" });
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 2, Description = "TODO", Name = "Venus", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FVenus.png?alt=media&token=4207ead0-daec-4d1d-a34f-a37a59e1698f" });
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 3, Description = "TODO", Name = "Earth", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FEarth.png?alt=media&token=0456b7fa-5818-42c2-8157-407d147604d6" });
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 4, Description = "TODO", Name = "Mars", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FMars.png?alt=media&token=2fcd6f2d-7658-4d0c-b71b-69c0396c792f" });
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 5, Description = "TODO", Name = "Jupiter", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FJupiter.png?alt=media&token=9fad61cf-2abd-4292-9f3d-a2ebd0f78f95" });
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 6, Description = "TODO", Name = "Saturn", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FSaturn.png?alt=media&token=30f888e6-66f7-4bdd-9d4a-61ab34a85755" });
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 7, Description = "TODO", Name = "Uranus", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FUranus.png?alt=media&token=c9bece5e-0d27-4438-9ade-56a03224079b" });
+                              dbcontext.SolarSystem.Add(new Planet() { Id = 8, Description = "TODO", Name = "Neptune", Url = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2FNeptune.png?alt=media&token=b8704a38-772d-40ea-8f45-958f3fae403a" });
+                             dbcontext.SaveChanges();
                          }
 
-                        
+
                     }
                })
 

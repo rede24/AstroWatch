@@ -1,12 +1,15 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace AstroWatch.UserControls
@@ -279,6 +282,16 @@ namespace AstroWatch.UserControls
 
                if (element == null)
                     throw new NotSupportedException("Carousel only supports children that are Framework elements");
+               if (DataContext != null)
+               {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri((DataContext as List<Planet>)[index].Url, UriKind.Absolute);
+                    bitmap.EndInit();
+                    (element as Image).Source = bitmap;
+
+               }
+
 
                return element;
           }
