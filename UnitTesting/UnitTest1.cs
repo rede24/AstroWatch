@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System.Windows;
 using RestSharp;
+using System.IO;
 
 namespace UnitTesting
 {
@@ -16,8 +17,12 @@ namespace UnitTesting
         [TestMethod]
         public  void TestMethod1()
         {
+               var db = new PlanetDB();
+               db.SolarSystem.RemoveRange(db.SolarSystem);
+               db.SaveChanges();
+         
+               
 
-
-        }
+          }
     }
 }

@@ -28,9 +28,9 @@ namespace AstroWatch.ViewModel
                if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
           }
 
-          public void setDescriptionPlanet(Planets nameOfPlanet)
+          public void setDescriptionPlanet(string nameOfPlanet)
           {
-               DescriptionPlanet = model.getDescriptionPlanet(nameOfPlanet);
+               DescriptionPlanet = SolarSystemPlanets.Where(x=>x.Name==nameOfPlanet).FirstOrDefault().Description;
           }
 
           public string DescriptionPlanet

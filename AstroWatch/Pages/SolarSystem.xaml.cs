@@ -76,7 +76,7 @@ namespace AstroWatch.Pages
             if (currentPlanetTextBlock != null)
             {
                 currentPlanetTextBlock.Text = selected.Name;
-                solarSystemViewModel.setDescriptionPlanet((Planets)Enum.Parse(typeof(Planets), selected.Name));
+                solarSystemViewModel.setDescriptionPlanet(selected. Name);
 
             }
 
