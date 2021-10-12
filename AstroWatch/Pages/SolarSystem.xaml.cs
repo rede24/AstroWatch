@@ -27,10 +27,13 @@ namespace AstroWatch.Pages
             InitializeComponent();
             solarSystemViewModel = new ViewModel.SolarSystemViewModel();
             DataContext = solarSystemViewModel;
-        }
-        #region Carousel
 
-        private void CarouselSpeedSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+            
+        }
+        
+          #region Carousel
+
+          private void CarouselSpeedSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             ExampleCarouselControl.RotationSpeed = e.NewValue;
         }

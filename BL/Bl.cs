@@ -19,9 +19,9 @@ namespace BL
           {
                return dal.getDescriptionPlanet(nameOfPlanet);
           }
-          public  async Task<List<NearEarthObject>> GetNearEarthObject(string start, string end)
+          public async Task<List<NearEarthObject>> GetNearEarthObject(string start, string end)
           {
-               NearEarthObjects nearEarthObject =  await dal.GetNearEarthObject(start, end);
+               NearEarthObjects nearEarthObject = await dal.GetNearEarthObject(start, end);
                var result = from s in nearEarthObject.near_earth_objects.Values
                             from q in s
                             select new NearEarthObject()
@@ -30,29 +30,33 @@ namespace BL
                                  Name = q.name,
                                  Hazardous = q.is_potentially_hazardous_asteroid,
                                  Diameter = q.estimated_diameter.meters.estimated_diameter_min,
-                                 Velocety = q.close_approach_data[0].relative_velocity.kilometers_per_hour ,                                                              
-                                 MissDistance = q.close_approach_data[0].miss_distance.kilometers,                     
+                                 Velocety = q.close_approach_data[0].relative_velocity.kilometers_per_hour,
+                                 MissDistance = q.close_approach_data[0].miss_distance.kilometers,
                                  CloseApproach = q.close_approach_data[0].close_approach_date
                             };
                return result.ToList();
           }
-
+          
           public async Task<Dictionary<string, string>> GetSearchResult(string search, bool debug = true)
           {
 
                Dictionary<string, string> listImagesAndDescription = await dal.GetSearchResult(search);
                Dictionary<string, string> res = new Dictionary<string, string>();
-               if (!debug)
-               {
+               //if (!debug)
+               //{
                     Parallel.ForEach(listImagesAndDescription.Keys, image =>
         {
              TagResult tag = dal.TagImage(image);
              if (tag.result != null)
-                  if (tag.result.tags.Any((x) => x.confidence > 80.0 && x.tag.en == "planet"))
+                  if (tag.result.tags.Any((x) => x.confidence > 90.0 && x.tag.en == "planet"))
                        res.Add(image, listImagesAndDescription[image]);
         });
-               }
+            //   }
                return listImagesAndDescription;
+          }
+          public List<Planet> GetSolarSystem()
+          {
+               return dal.GetSolarSysytem();
           }
      }
 }

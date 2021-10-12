@@ -21,7 +21,7 @@ namespace BE
 
      public class PlanetDB : DbContext
      {
-          public PlanetDB() : base("astrowatchDB")
+          public PlanetDB() : base("solarSystem")
           {
               
 

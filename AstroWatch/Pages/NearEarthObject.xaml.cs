@@ -38,11 +38,11 @@ namespace AstroWatch.Pages
                var start = DateTime.Parse(startDate.Text).ToString("yyyy-MM-dd");
                var end = DateTime.Parse(endDate.Text).ToString("yyyy-MM-dd");
 
-               //new Thread(() =>
-               //{
+               new Thread(() =>
+               {
                     vm.SearcjNEO(start, end);
 
-               //}).Start();
+               }).Start();
           }
      }
 }
