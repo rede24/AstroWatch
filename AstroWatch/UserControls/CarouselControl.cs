@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -286,9 +287,20 @@ namespace AstroWatch.UserControls
                {
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
+                   // bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                   // bitmap.UriCachePolicy = new RequestCachePolicy(RequestCacheLevel.BypassCache);
                     bitmap.UriSource = new Uri((DataContext as List<Planet>)[index].Url, UriKind.Absolute);
                     bitmap.EndInit();
-                    (element as Image).Source = bitmap;
+                    if (bitmap.IsDownloading)
+                    {
+                         bitmap.DownloadCompleted += (s, ev) => (element as Image).Source = bitmap;
+                    }
+                    else
+                    {
+                        (element as Image).Source = bitmap;
+                    }
+                    
+
 
                }
 
