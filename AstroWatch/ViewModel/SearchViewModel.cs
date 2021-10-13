@@ -21,20 +21,6 @@ namespace AstroWatch.ViewModel
             collectionUrlImages = searchModel.GetSearchResult(search).Result;            
         }
 
-        public Dictionary<string, string> collectionUrlImages { get; set; }//(url herf, Description)
-
-
-        ////////////////
-        
-
-
-
-
-
-
-
-
-
-
+        public Dictionary<string, string> collectionUrlImages { get; set; }
     }
 }
