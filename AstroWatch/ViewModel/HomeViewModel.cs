@@ -20,7 +20,7 @@ namespace AstroWatch.ViewModel
         {
             get
             {
-                return Task.Run(() => model.imageOfTheDay).Result.url;
+                return Task.Run(() => model.GetImageOfTheDay()).Result.url;
                 
             }
         }
@@ -29,7 +29,7 @@ namespace AstroWatch.ViewModel
         {
             get
             {
-                return Task.Run(() => model.imageOfTheDay).Result.title;
+                return Task.Run(() => model.GetImageOfTheDay()).Result.title;
             }
         }
 
@@ -37,7 +37,7 @@ namespace AstroWatch.ViewModel
         {
             get
             {
-                return Task.Run(() => model.imageOfTheDay).Result.explanation;
+                return Task.Run(() => model.GetImageOfTheDay()).Result.explanation;
             }
         }
         

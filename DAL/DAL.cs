@@ -101,8 +101,8 @@ namespace DAL
 
           public TagResult TagImage(string urlImage)
           {
-               string apiKey = "acc_dfa7a0e1220a57d";
-               string apiSecret = "5f7ee7c67cf6cfb641b93e0cd2f9e3ba";
+               string apiKey = "acc_f264781849c7c63";
+               string apiSecret = "4007359eabd9d3f72c47c0a75ce79ae7";
 
 
                string basicAuthValue = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(String.Format("{0}:{1}", apiKey, apiSecret)));

@@ -17,9 +17,11 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
+        
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}">
+
 
     <Grid Background="darkslategray">
 
@@ -32,7 +34,7 @@
         <uc:NavPanel Grid.Column="0"/>
         
         <Grid x:Name="BG" Grid.Column="1">
-            <Frame  Name="page" Source="pages/HomePage.xaml" />
+            <Frame  Name="page" Source="pages/HomePage.xaml" NavigationUIVisibility="Hidden"  />
         </Grid>       
 
     </Grid>

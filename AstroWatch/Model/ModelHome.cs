@@ -10,14 +10,15 @@ namespace AstroWatch.Model
     public class ModelHome
     {
         BL.Bl bl;
-        public  ModelHome()
+        public ModelHome()
         {
-            bl = new BL.Bl();           
+            bl = new BL.Bl();
         }
 
-
-        public Task<ImageOfTheDay> imageOfTheDay {
-            get { return bl.GetImageOfTheDay(); }            
-        }        
+        public Task<ImageOfTheDay> GetImageOfTheDay()
+        {
+            return bl.GetImageOfTheDay(); 
+        }
     }
+
 }

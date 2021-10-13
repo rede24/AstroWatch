@@ -9,6 +9,7 @@
       d:DesignHeight="450" 
       MinWidth="600"
       MaxWidth="800"
+      
       ShowsNavigationUI="False">
 
     <Page.Resources>
