@@ -25,7 +25,8 @@ namespace AstroWatch
           }
 
           bool ICommand.CanExecute(object parameter)
-          { return true;
+          {
+            return true;
           }
 
           void ICommand.Execute(object parameter)

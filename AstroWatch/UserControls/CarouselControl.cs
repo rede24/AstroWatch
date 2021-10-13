@@ -287,8 +287,6 @@ namespace AstroWatch.UserControls
                {
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
-                   // bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                   // bitmap.UriCachePolicy = new RequestCachePolicy(RequestCacheLevel.BypassCache);
                     bitmap.UriSource = new Uri((DataContext as List<Planet>)[index].Url, UriKind.Absolute);
                     bitmap.EndInit();
                     if (bitmap.IsDownloading)

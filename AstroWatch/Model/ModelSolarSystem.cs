@@ -20,9 +20,9 @@ namespace AstroWatch.Model
             return bl.getDescriptionPlanet(nameOfPlanet);
         }
 
-          internal List<Planet> GetSolarSystem()
-          {
-               return bl.GetSolarSystem();
-          }
-     }
+        public List<Planet> GetSolarSystem()
+        {
+            return bl.GetSolarSystem();
+        }
+    }
 }
