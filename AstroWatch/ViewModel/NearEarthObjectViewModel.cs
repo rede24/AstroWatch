@@ -31,9 +31,9 @@ namespace AstroWatch.ViewModel
                 OnPropertyChanged("NearEarthObj");
             }
         }
-        public void SearcjNEO(string s, string e)
+        public void SearcjNEO(string start, string end, double diameter, bool hazardous)
         {
-            NearEarthObj = model.GetNearEarthObject(s, e, 0, true);
+            NearEarthObj = model.GetNearEarthObject(start, end, diameter, hazardous);
         }
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)

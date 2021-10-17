@@ -18,7 +18,7 @@
   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
   Text="Near Earth Object Explorer" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-          <Grid Grid.Row="1">
+          <Grid Grid.Row="1" Height="auto">
                <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2.5*"/>
                     <ColumnDefinition Width="*"/>

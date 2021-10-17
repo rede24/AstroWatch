@@ -19,30 +19,32 @@ using System.Windows.Shapes;
 
 namespace AstroWatch.Pages
 {
-     /// <summary>
-     /// Interaction logic for Page1.xaml
-     /// </summary>
-     public partial class DangerPage : Page
-     {
-          NearEarthObjectViewModel vm;
-          public DangerPage()
-          {
-               InitializeComponent();
-               vm = new NearEarthObjectViewModel();
-               DataContext = vm;
+    /// <summary>
+    /// Interaction logic for Page1.xaml
+    /// </summary>
+    public partial class DangerPage : Page
+    {
+        NearEarthObjectViewModel vm;
+        public DangerPage()
+        {
+            InitializeComponent();
+            vm = new NearEarthObjectViewModel();
+            DataContext = vm;
 
-          }
+        }
 
-          private void Button_Click(object sender, RoutedEventArgs e)
-          {
-               var start = DateTime.Parse(startDate.Text).ToString("yyyy-MM-dd");
-               var end = DateTime.Parse(endDate.Text).ToString("yyyy-MM-dd");
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var start = DateTime.Parse(startDate.Text).ToString("yyyy-MM-dd");
+            var end = DateTime.Parse(endDate.Text).ToString("yyyy-MM-dd");
+            double diameter = double.Parse(txtDiameter.Text);
+            bool hazardous = is_potentially_hazardous_asteroid.IsChecked.Value;
 
-               new Thread(() =>
+            new Thread(() =>
                {
-                    vm.SearcjNEO(start, end);
+                   vm.SearcjNEO(start, end, diameter, hazardous);
 
                }).Start();
-          }
-     }
+        }
+    }
 }
