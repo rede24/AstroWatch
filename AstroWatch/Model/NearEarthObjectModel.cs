@@ -11,12 +11,17 @@ namespace AstroWatch.Model
     class NearEarthObjectModel
     {
         Bl bl = new Bl();
+         public List<NearEarthObject> neoList;
 
-        public List<NearEarthObject> GetNearEarthObject(string start, string end, double diameter, bool hazardous)
+
+
+        public async Task<List<NearEarthObject>> GetNearEarthObject(string start, string end, double diameter)
         {
-            return (from s in Task.Run(() => bl.GetNearEarthObject(start, end)).Result
-                    where s.Diameter > diameter && s.Hazardous == hazardous
+            return  (from s in await bl.GetNearEarthObject(start, end)
+                    where s.Diameter > diameter 
                     select s).ToList();
+               
         }
-    }
+
+     }
 }

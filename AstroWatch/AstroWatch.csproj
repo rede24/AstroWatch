@@ -73,13 +73,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\FilterCommand.cs" />
     <Compile Include="Converters\ConverterterSourceToVisible.cs" />
-    <Compile Include="MainViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="Model\ModelHome.cs" />
     <Compile Include="Model\ModelSolarSystem.cs" />
     <Compile Include="Model\NearEarthObjectModel.cs" />
     <Compile Include="Model\SearchModel.cs" />
-    <Compile Include="NavigationCommand.cs" />
+    <Compile Include="Commands\NavigationCommand.cs" />
     <Compile Include="Pages\NearEarthObject.xaml.cs">
       <DependentUpon>NearEarthObject.xaml</DependentUpon>
     </Compile>

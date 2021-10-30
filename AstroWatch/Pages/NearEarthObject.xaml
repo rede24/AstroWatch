@@ -34,7 +34,7 @@
 
                               <StackPanel Orientation="Horizontal">
                                    <TextBlock Margin="10" Style="{StaticResource MaterialDesignHeadline6TextBlock}"  Text="Is potentially hazardous asteroid" />
-                                   <ToggleButton x:Name="is_potentially_hazardous_asteroid" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" IsChecked="False" />
+                                   <ToggleButton Command="{Binding Filter }" CommandParameter="{Binding ElementName=is_potentially_hazardous_asteroid ,Path=IsChecked}" x:Name="is_potentially_hazardous_asteroid" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"   IsChecked="False"  />
                               </StackPanel>
 
                               <StackPanel Orientation="Horizontal">

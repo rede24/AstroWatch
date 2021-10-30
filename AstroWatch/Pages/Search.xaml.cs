@@ -45,11 +45,6 @@ namespace AstroWatch.Pages
             var thread = new Thread(() =>
             {
                 searchViewModel.GetSearchResult(text);
-                
-
-                //searchViewModel.collectionUrlImages = new Dictionary<string, string>();
-                //searchViewModel.collectionUrlImages.Add("aaa", "bbb");
-                //searchViewModel.collectionUrlImages.Add("ccc", "ddd");
                 this.Dispatcher.BeginInvoke(new Action(() => {
 
                 Resources["CollectionUrlImages"] = searchViewModel.collectionUrlImages;
