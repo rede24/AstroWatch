@@ -51,7 +51,7 @@
 
 
           </Grid>
-        <DataGrid IsReadOnly="True" CanUserAddRows="False"  CanUserSortColumns="True"  AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding Path=NearEarthObj,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" GridLinesVisibility="All" >
+        <DataGrid IsReadOnly="True" CanUserAddRows="False"  ColumnWidth="7*" CanUserSortColumns="True"  AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding Path=NearEarthObj,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" GridLinesVisibility="All" >
           </DataGrid>
      </Grid>
 </Page>
