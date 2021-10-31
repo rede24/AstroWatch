@@ -16,15 +16,15 @@
         <local1:ConverterterSourceToVisible x:Key="Ramzor"/>
     </Page.Resources>
 
-    <Grid Background="darkslategray">
+     <Grid Background="#FF141526">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock  VerticalAlignment="Center"  Foreground="Black" FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="0" Text="{Binding Title}" FontSize="24" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia"/>
-        <TextBlock  VerticalAlignment="Center"  Foreground="Black" FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="1" Text="Loading Image..." Visibility="{Binding ElementName=image,Path=IsLoaded,UpdateSourceTrigger=PropertyChanged,Mode=OneWay,Converter={StaticResource Ramzor}}" FontSize="14" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia" Margin="0,0,0,35"/>
+        <TextBlock  VerticalAlignment="Center"   FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="0" Text="{Binding Title}" FontSize="24" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia"/>
+        <TextBlock  VerticalAlignment="Center"   FontStyle="Oblique"  HorizontalAlignment="Center" Grid.Row="1" Text="Loading Image..." Visibility="{Binding ElementName=image,Path=IsLoaded,UpdateSourceTrigger=PropertyChanged,Mode=OneWay,Converter={StaticResource Ramzor}}" FontSize="14" Opacity="0.4" FontWeight="Bold" FontFamily="Georgia" Margin="0,0,0,35"/>
         <ProgressBar   Visibility="{Binding ElementName=image,Path=IsLoaded,UpdateSourceTrigger=PropertyChanged,Mode=OneWay,Converter={StaticResource Ramzor}}" Name="ImageprogressBar" Height="10" Grid.Row="1" Foreground="DarkViolet" IsIndeterminate="True" />
         <Border Grid.Row="1" BorderBrush="Black"  BorderThickness="5" >
             <Image x:Name="image" Source="{Binding urlImage}" Stretch="Fill" MouseWheel="image_MouseWheel" />

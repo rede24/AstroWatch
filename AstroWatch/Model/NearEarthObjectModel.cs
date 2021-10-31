@@ -17,10 +17,12 @@ namespace AstroWatch.Model
 
         public async Task<List<NearEarthObject>> GetNearEarthObject(string start, string end, double diameter)
         {
-            return  (from s in await bl.GetNearEarthObject(start, end)
+               neoList=(from s in await bl.GetNearEarthObject(start, end)
                     where s.Diameter > diameter 
                     select s).ToList();
-               
+               return neoList;
+
+
         }
 
      }

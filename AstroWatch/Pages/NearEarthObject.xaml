@@ -15,7 +15,7 @@
           </Grid.RowDefinitions>
 
           <TextBlock
-  Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+  
   Text="Near Earth Object Explorer" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
           <Grid Grid.Row="1" Height="auto">
@@ -24,24 +24,24 @@
                     <ColumnDefinition Width="*"/>
                </Grid.ColumnDefinitions>
 
-               <Border  BorderBrush="Black"  Grid.Column="0" Background="DarkCyan" CornerRadius="10" BorderThickness="2">
+               <Border  BorderBrush="Black"  Grid.Column="0"  CornerRadius="10" BorderThickness="2" Background="#FF26273B">
                     <Grid>
                          <StackPanel Grid.Column="0">
                               <StackPanel Orientation="Horizontal">
-                                   <TextBlock Margin="10" Style="{StaticResource MaterialDesignHeadline6TextBlock}"  Text="All those that are larger in diameter than ..." />
+                                   <TextBlock Margin="10"   Text="All those that are larger in diameter than ..." />
                                    <TextBox Name="txtDiameter" Style="{StaticResource MaterialDesignFilledTextBox}" VerticalAlignment="Top" AcceptsReturn="True" TextWrapping="Wrap" MaxWidth="400" materialDesign:HintAssist.Hint="Min diameter"/>
                               </StackPanel>
 
                               <StackPanel Orientation="Horizontal">
-                                   <TextBlock Margin="10" Style="{StaticResource MaterialDesignHeadline6TextBlock}"  Text="Is potentially hazardous asteroid" />
+                                   <TextBlock Margin="10"   Text="Is potentially hazardous asteroid" />
                                    <ToggleButton Command="{Binding Filter }" CommandParameter="{Binding ElementName=is_potentially_hazardous_asteroid ,Path=IsChecked}" x:Name="is_potentially_hazardous_asteroid" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"   IsChecked="False"  />
                               </StackPanel>
 
                               <StackPanel Orientation="Horizontal">
-                                   <TextBlock Margin="10" Style="{StaticResource MaterialDesignHeadline6TextBlock}"  Text="Between dates:" />
-                                   <DatePicker  Name="startDate" Width="140" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
-                                   <TextBlock Margin="10" Style="{StaticResource MaterialDesignHeadline6TextBlock}"  Text="to:" />
-                                   <DatePicker  Name="endDate" Width="140" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+                                   <TextBlock Margin="10"   Text="Between dates:" />
+                                   <DatePicker    Name="startDate" Width="140" materialDesign:HintAssist.Hint="Pick Date"  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Foreground="White"  />
+                                   <TextBlock Margin="10"   Text="to:" />
+                                   <DatePicker  Name="endDate" Width="140" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}"  Foreground="White"  />
                               </StackPanel>
 
                          </StackPanel >
@@ -51,7 +51,7 @@
 
 
           </Grid>
-        <DataGrid IsReadOnly="True" CanUserAddRows="False"  ColumnWidth="7*" CanUserSortColumns="True"  AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding Path=NearEarthObj,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" GridLinesVisibility="All" >
-          </DataGrid>
+          <DataGrid  IsReadOnly="True" CanUserAddRows="False"  ColumnWidth="7*" CanUserSortColumns="True"  AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding Path=NearEarthObj,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" GridLinesVisibility="All" Background="Black" FontWeight="Bold" />
+
      </Grid>
 </Page>
