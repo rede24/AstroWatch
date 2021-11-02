@@ -32,7 +32,7 @@
 -->
         <ProgressBar HorizontalAlignment="Stretch" Height="40" Name="progressBar" Grid.Row="1" Visibility="Collapsed" IsIndeterminate="True" VerticalAlignment="Center"/>
         <Grid Margin="10" Grid.Row="1">
-            <ListBox ItemsSource="{DynamicResource CollectionUrlImages}" Grid.IsSharedSizeScope="True">
+            <ListBox ItemsSource="{Binding Path=CollectionUrlImages}" Grid.IsSharedSizeScope="True">
                 <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -55,7 +55,7 @@
       Margin="8"
                                     Height="200"
       Width="200">
-                                    <Image Source="{Binding Key}"/>
+                                    <Image Source="{Binding Path=Key}"/>
                                 </Button>
                             </materialDesign:Flipper.FrontContent>
                             <materialDesign:Flipper.BackContent>
@@ -68,7 +68,7 @@
       Width="200"
      >
                                     <ScrollViewer >
-                                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Path=Value}" TextWrapping="Wrap"/>
                                     
                                     </ScrollViewer>
                                 </Button>

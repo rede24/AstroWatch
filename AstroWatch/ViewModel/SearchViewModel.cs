@@ -1,13 +1,15 @@
 ﻿using AstroWatch.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AstroWatch.ViewModel
 {
-    public class SearchViewModel
+    public class SearchViewModel : INotifyPropertyChanged
     {
         SearchModel searchModel;
         public SearchViewModel()
@@ -18,9 +20,44 @@ namespace AstroWatch.ViewModel
 
         public void GetSearchResult(string search)
         {
-            collectionUrlImages = searchModel.GetSearchResult(search).Result;            
+            CollectionUrlImages = searchModel.GetSearchResult(search).Result;            
         }
 
-        public Dictionary<string, string> collectionUrlImages { get; set; }
+        Dictionary<string, string> collectionUrlImages;
+        public Dictionary<string, string> CollectionUrlImages
+        {
+            get
+            {
+                if (collectionUrlImages == null)
+                    collectionUrlImages = new Dictionary<string, string>();
+                return collectionUrlImages;
+            }
+            set
+            {
+                collectionUrlImages = value;
+                OnPropertyChanged("CollectionUrlImages");
+            }
+            
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //private int _selectedBookIndex;
+
+
+        //public int SelectedBookIndex
+        //{
+        //    get { return _selectedBookIndex; }
+        //    set
+        //    {
+        //        _selectedBookIndex = value;
+        //    }
+        //}
+
+
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }
