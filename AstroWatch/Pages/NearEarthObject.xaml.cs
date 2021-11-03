@@ -45,14 +45,7 @@ namespace AstroWatch.Pages
 
                bool hazardous = is_potentially_hazardous_asteroid.IsChecked.Value;
 
-
-
-               Task.Run(()=> vm.SearcNEO(start, end, diameter));
-
-         
-              
-          }
-
-       
+               Task.Run(()=> vm.SearcNEO(start, end, diameter, hazardous));             
+          }      
      }
 }

@@ -40,10 +40,11 @@ namespace AstroWatch.ViewModel
                     OnPropertyChanged("NearEarthObj");
                }
           }
-          public async void SearcNEO(string start, string end, double diameter)
-          {
-               NearEarthObj = await model.GetNearEarthObject(start, end, diameter);
-          }
+        public async void SearcNEO(string start, string end, double diameter, bool hazardous)
+        {
+            NearEarthObj = await model.GetNearEarthObject(start, end, diameter);
+            Hazardonly(hazardous);
+        }
           public void Hazardonly(bool b = false)
           {
 
