@@ -15,8 +15,8 @@
             <RowDefinition Height="1.5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-          
-          <usercontrols:CarouselControl DataContext="{Binding SolarSystemPlanets}"  Width="1000" Height="0" Grid.Row="0" x:Name="ExampleCarouselControl"  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected"  >
+
+        <usercontrols:CarouselControl DataContext="{Binding SolarSystemPlanets}"  Width="1000" Height="0" Grid.Row="0" x:Name="ExampleCarouselControl"  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" OnElementSelected="ExampleCarouselControl_OnElementSelected"  >
             <Image Name="Mercury"  Width="100" Height=" 100"></Image>
             <Image Name="Venus"    Width="100" Height=" 100"></Image>
             <Image Name="Earth"    Width="100" Height=" 100"></Image>

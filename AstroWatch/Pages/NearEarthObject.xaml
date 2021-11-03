@@ -7,51 +7,51 @@
       xmlns:local="clr-namespace:AstroWatch.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-     <Grid>
-          <Grid.RowDefinitions>
-               <RowDefinition Height="0.75*"/>
-               <RowDefinition Height="1.2*"/>
-               <RowDefinition Height="6*"/>
-          </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
 
-          <TextBlock
+        <TextBlock
   
   Text="Near Earth Object Explorer" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-          <Grid Grid.Row="1" Height="auto">
-               <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2.5*"/>
-                    <ColumnDefinition Width="*"/>
-               </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Height="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-               <Border  BorderBrush="Black"  Grid.Column="0"  CornerRadius="10" BorderThickness="2" Background="#FF26273B">
-                    <Grid>
-                         <StackPanel Grid.Column="0">
-                              <StackPanel Orientation="Horizontal">
-                                   <TextBlock Margin="10"   Text="All those that are larger in diameter than ..." />
-                                   <TextBox Name="txtDiameter" Style="{StaticResource MaterialDesignFilledTextBox}" VerticalAlignment="Top" AcceptsReturn="True" TextWrapping="Wrap" MaxWidth="400" materialDesign:HintAssist.Hint="Min diameter"/>
-                              </StackPanel>
+            <Border  BorderBrush="Black"  Grid.Column="0"  CornerRadius="10" BorderThickness="2" Background="#FF26273B">
+                <Grid>
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="10"   Text="All those that are larger in diameter than ..." />
+                            <TextBox Name="txtDiameter" Style="{StaticResource MaterialDesignFilledTextBox}" VerticalAlignment="Top" AcceptsReturn="True" TextWrapping="Wrap" MaxWidth="400" materialDesign:HintAssist.Hint="Min diameter"/>
+                        </StackPanel>
 
-                              <StackPanel Orientation="Horizontal">
-                                   <TextBlock Margin="10"   Text="Is potentially hazardous asteroid" />
-                                   <ToggleButton Command="{Binding Filter }" CommandParameter="{Binding ElementName=is_potentially_hazardous_asteroid ,Path=IsChecked}" x:Name="is_potentially_hazardous_asteroid" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"   IsChecked="False"  />
-                              </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="10"   Text="Is potentially hazardous asteroid" />
+                            <ToggleButton Command="{Binding Filter }" CommandParameter="{Binding ElementName=is_potentially_hazardous_asteroid ,Path=IsChecked}" x:Name="is_potentially_hazardous_asteroid" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"   IsChecked="False"  />
+                        </StackPanel>
 
-                              <StackPanel Orientation="Horizontal">
-                                   <TextBlock Margin="10"   Text="Between dates:" />
-                                   <DatePicker    Name="startDate" Width="140" materialDesign:HintAssist.Hint="Pick Date"  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Foreground="White"  />
-                                   <TextBlock Margin="10"   Text="to:" />
-                                   <DatePicker  Name="endDate" Width="140" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}"  Foreground="White"  />
-                              </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="10"   Text="Between dates:" />
+                            <DatePicker    Name="startDate" Width="140" materialDesign:HintAssist.Hint="Pick Date"  Style="{StaticResource MaterialDesignOutlinedDatePicker}" Foreground="White"  />
+                            <TextBlock Margin="10"   Text="to:" />
+                            <DatePicker  Name="endDate" Width="140" materialDesign:HintAssist.Hint="Pick Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}"  Foreground="White"  />
+                        </StackPanel>
 
-                         </StackPanel >
-                    </Grid>
-               </Border>
-               <Button Margin="5" Grid.Column="1" Content="Filter" Click="Button_Click"/>
+                    </StackPanel >
+                </Grid>
+            </Border>
+            <Button Margin="5" Grid.Column="1" Content="Filter" Click="Button_Click"/>
 
 
-          </Grid>
-          <DataGrid  IsReadOnly="True" CanUserAddRows="False"  ColumnWidth="7*" CanUserSortColumns="True"  AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding Path=NearEarthObj,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" GridLinesVisibility="All" Background="Black" FontWeight="Bold" />
+        </Grid>
+        <DataGrid  IsReadOnly="True" CanUserAddRows="False"  ColumnWidth="7*" CanUserSortColumns="True"  AutoGenerateColumns="True" Name="Result" Grid.Row="2" ItemsSource="{Binding Path=NearEarthObj,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" GridLinesVisibility="All" Background="Black" FontWeight="Bold" />
 
-     </Grid>
+    </Grid>
 </Page>

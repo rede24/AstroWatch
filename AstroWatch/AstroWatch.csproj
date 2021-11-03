@@ -75,7 +75,6 @@
     </ApplicationDefinition>
     <Compile Include="Commands\FilterCommand.cs" />
     <Compile Include="Converters\ConverterterSourceToVisible.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="Model\ModelHome.cs" />
     <Compile Include="Model\ModelSolarSystem.cs" />
     <Compile Include="Model\NearEarthObjectModel.cs" />

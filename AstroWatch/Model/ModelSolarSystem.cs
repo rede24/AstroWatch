@@ -15,11 +15,6 @@ namespace AstroWatch.Model
             bl = new BL.Bl();
         }
 
-        public string getDescriptionPlanet(Planets nameOfPlanet)
-        {
-            return bl.getDescriptionPlanet(nameOfPlanet);
-        }
-
         public List<Planet> GetSolarSystem()
         {
             return bl.GetSolarSystem();

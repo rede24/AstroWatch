@@ -44,7 +44,7 @@ namespace AstroWatch.ViewModel
             get
             {
                 if (descriptionPlanet == null)
-                    descriptionPlanet =model.GetSolarSystem()[0].Description ;
+                    descriptionPlanet = model.GetSolarSystem()[0].Description;
                 return descriptionPlanet;
             }
             set

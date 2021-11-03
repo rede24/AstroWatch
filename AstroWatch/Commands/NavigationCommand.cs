@@ -9,60 +9,56 @@ using System.Windows.Input;
 
 namespace AstroWatch
 {
-     class NavigationCommand : ICommand
-     {
-          event EventHandler ICommand.CanExecuteChanged
-          {
-               add
-               {
-                    CommandManager.RequerySuggested += value;
-               }
+    class NavigationCommand : ICommand
+    {
+        event EventHandler ICommand.CanExecuteChanged
+        {
+            add
+            {
+                CommandManager.RequerySuggested += value;
+            }
 
-               remove
-               {
-                    CommandManager.RequerySuggested -= value;
-               }
-          }
+            remove
+            {
+                CommandManager.RequerySuggested -= value;
+            }
+        }
 
-          bool ICommand.CanExecute(object parameter)
-          {
+        bool ICommand.CanExecute(object parameter)
+        {
             return true;
-          }
+        }
 
-          void ICommand.Execute(object parameter)
-          {
-               string page = parameter as string;               
-       
-               switch (page)
-               {
-                    case "Home" : 
-                               MainWindow.CurrentPage.Content =
-                      new HomePage();
+        void ICommand.Execute(object parameter)
+        {
+            string page = parameter as string;
 
-                         break;
-                    case "SolarSystem":
-                         MainWindow.CurrentPage.Content =
-                      new SolarSystem();
+            switch (page)
+            {
+                case "Home":
+                    MainWindow.CurrentPage.Content =
+           new HomePage();
 
-                         break;
-                    case "Search":
-                         MainWindow.CurrentPage.Content =
-                       new Search();
+                    break;
+                case "SolarSystem":
+                    MainWindow.CurrentPage.Content =
+                 new SolarSystem();
 
-                         break;
-                    case "Show planets":
-                         MainWindow.CurrentPage.Content =
-                       new DangerPage();
-                         break;
+                    break;
+                case "Search":
+                    MainWindow.CurrentPage.Content =
+                  new Search();
+
+                    break;
+                case "Show planets":
+                    MainWindow.CurrentPage.Content =
+                  new DangerPage();
+                    break;
 
                 case "Exit":
                     App.Current.MainWindow.Close();
                     break;
-
-
             }
-
-
-          }
-     }
+        }
+    }
 }

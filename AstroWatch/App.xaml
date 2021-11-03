@@ -14,12 +14,5 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
-   
-        
-            
-      
-      
-    </Application.Resources>  
-    
+    </Application.Resources>
 </Application>

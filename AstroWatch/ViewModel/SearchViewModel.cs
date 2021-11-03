@@ -15,12 +15,10 @@ namespace AstroWatch.ViewModel
         public SearchViewModel()
         {
             searchModel = new SearchModel();
-            
         }
-
         public void GetSearchResult(string search)
         {
-            CollectionUrlImages = searchModel.GetSearchResult(search).Result;            
+            CollectionUrlImages = searchModel.GetSearchResult(search).Result;
         }
 
         Dictionary<string, string> collectionUrlImages;
@@ -37,23 +35,9 @@ namespace AstroWatch.ViewModel
                 collectionUrlImages = value;
                 OnPropertyChanged("CollectionUrlImages");
             }
-            
+
         }
         public event PropertyChangedEventHandler PropertyChanged;
-
-        //private int _selectedBookIndex;
-
-
-        //public int SelectedBookIndex
-        //{
-        //    get { return _selectedBookIndex; }
-        //    set
-        //    {
-        //        _selectedBookIndex = value;
-        //    }
-        //}
-
-
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {

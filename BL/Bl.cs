@@ -14,11 +14,6 @@ namespace BL
         {
             return await dal.GetImageOfTheDayFromNASAApi();
         }
-
-        public string getDescriptionPlanet(Planets nameOfPlanet)
-        {
-            return dal.getDescriptionPlanet(nameOfPlanet);
-        }
         public async Task<List<NearEarthObject>> GetNearEarthObject(string start, string end)
         {
             NearEarthObjects nearEarthObject = await dal.GetNearEarthObject(start, end);
@@ -36,7 +31,6 @@ namespace BL
                          };
             return result.ToList();
         }
-
         public async Task<Dictionary<string, string>> GetSearchResult(string search, bool debug = true)
         {
 

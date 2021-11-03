@@ -17,8 +17,6 @@ namespace AstroWatch.Converters
 
             if (value != null)
             {
-
-
                 if (value.ToString() == "true")
                     result = Visibility.Hidden.ToString();
             }

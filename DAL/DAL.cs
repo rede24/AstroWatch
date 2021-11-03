@@ -17,37 +17,25 @@ namespace DAL
     {
         public Dal()
         {
-            new Thread(() =>
+            using (var dbcontext = new PlanetDB())
             {
-                using (var dbcontext = new PlanetDB())
-
+                if (dbcontext.SolarSystem.ToList().Count == 0)
                 {
-
-
-                    if (dbcontext.SolarSystem.ToList().Count == 0)
-                    {
-                        var a = JsonConvert.DeserializeObject<Dictionary<string, string>>(new StreamReader(@"../../../DAL/Description.json").ReadToEnd());
-                        var link = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2F";
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 1, Description = a["Mercury"], Name = "Mercury",Url = $"{link}Mercury.png?alt=media" });
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 2, Description = a["Venus"], Name = "Venus", Url = $"{link}Venus.png?alt=media" });
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 3, Description = a["Earth"], Name = "Earth", Url = $"{link}Earth.png?alt=media" });
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 4, Description = a["Mars"], Name = "Mars", Url = $"{link}Mars.png?alt=media" });
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 5, Description = a["Jupiter"], Name = "Jupiter", Url = $"{link}Jupiter.png?alt=media" });
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 6, Description = a["Saturn"], Name = "Saturn", Url = $"{link}Saturn.png?alt=media" });
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 7, Description = a["Uranus"], Name = "Uranus", Url = $"{link}Uranus.png?alt=media" });
-                        dbcontext.SolarSystem.Add(new Planet() { Id = 8, Description = a["Neptune"], Name = "Neptune", Url = $"{ link }Neptune.png?alt=media" });
-                        dbcontext.SaveChanges();
-                    }
-
-
+                    var a = JsonConvert.DeserializeObject<Dictionary<string, string>>(new StreamReader(@"../../../DAL/Description.json").ReadToEnd());
+                    var link = "https://firebasestorage.googleapis.com/v0/b/astrowatch-12d3a.appspot.com/o/Planets%2F";
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 1, Description = a["Mercury"], Name = "Mercury", Url = $"{link}Mercury.png?alt=media" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 2, Description = a["Venus"], Name = "Venus", Url = $"{link}Venus.png?alt=media" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 3, Description = a["Earth"], Name = "Earth", Url = $"{link}Earth.png?alt=media" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 4, Description = a["Mars"], Name = "Mars", Url = $"{link}Mars.png?alt=media" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 5, Description = a["Jupiter"], Name = "Jupiter", Url = $"{link}Jupiter.png?alt=media" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 6, Description = a["Saturn"], Name = "Saturn", Url = $"{link}Saturn.png?alt=media" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 7, Description = a["Uranus"], Name = "Uranus", Url = $"{link}Uranus.png?alt=media" });
+                    dbcontext.SolarSystem.Add(new Planet() { Id = 8, Description = a["Neptune"], Name = "Neptune", Url = $"{ link }Neptune.png?alt=media" });
+                    dbcontext.SaveChanges();
                 }
-            })
-
-
-            .Start();
-
-
+            }
         }
+
         const string APIKEY = "js4BJax4nac2gMLpPtK0IUEOHg5uDyPsLT5dcFGh";
         public async Task<ImageOfTheDay> GetImageOfTheDayFromNASAApi()
         {
@@ -55,33 +43,13 @@ namespace DAL
             var res = await PerformHttpRequest<ImageOfTheDay>(request);
             return res;
         }
-
-        public string getDescriptionPlanet(Planets nameOfPlanet)
+        public List<Planet> GetSolarSysytem()
         {
-            switch (nameOfPlanet)
+            using (var ctx = new PlanetDB())
             {
-                case Planets.Mercury:
-                    return "aaaa";
-                case Planets.Venus:
-                    return "bbb";
-                case Planets.Earth:
-                    return "ccc";
-                case Planets.Mars:
-                    return "ddd";
-                case Planets.Jupiter:
-                    return "eee";
-                case Planets.Saturn:
-                    return "fff";
-                case Planets.Uranus:
-                    return "ggg";
-                case Planets.Neptune:
-                    return "hhh";
-
-                default:
-                    return "default";
+                return ctx.SolarSystem.ToList();
             }
         }
-
         public async Task<Dictionary<string, string>> GetSearchResult(string search)
         {
             string request = $"https://images-api.nasa.gov/search?q={search}";
@@ -95,15 +63,11 @@ namespace DAL
                 }
             }
             return valuePairs;
-
         }
-
-
         public TagResult TagImage(string urlImage)
         {
             string apiKey = "acc_0fd8b9ede9c47e9";
             string apiSecret = "f4fde1a58c92ace9e4d9dca1b91e5744";
-
 
             string basicAuthValue = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(String.Format("{0}:{1}", apiKey, apiSecret)));
 
@@ -117,34 +81,17 @@ namespace DAL
             IRestResponse response = client.Execute(request);
             var tagResult = JsonConvert.DeserializeObject<TagResult>(response.Content);
 
-
             return tagResult;
         }
-
         public async Task<NearEarthObjects> GetNearEarthObject(string start, string end)
         {
-
-
             string link = $"https://api.nasa.gov/neo/rest/v1/feed?start_date={start}&end_date={end}&api_key={APIKEY}";
             var r = await PerformHttpRequest<NearEarthObjects>(link);
             return r;
-
-
-        }
-        public List<Planet> GetSolarSysytem()
-        {
-            using (var ctx = new PlanetDB())
-            {
-                return ctx.SolarSystem.ToList();
-
-
-            }
         }
         private async Task<T> PerformHttpRequest<T>(String requestLink)
         {
             T searchResult = default(T);
-
-
 
             // Create a New HttpClient object.
             HttpClient client = new HttpClient();
@@ -159,8 +106,6 @@ namespace DAL
                 // string responseBody = await client.GetStringAsync(uri);
 
                 searchResult = JsonConvert.DeserializeObject<T>(responseBody);
-
-
             }
             catch (HttpRequestException e)
             {
@@ -173,46 +118,8 @@ namespace DAL
             client.Dispose();
 
             return searchResult;
-
         }
-
-        //private async Task<T> GetNearEarthObject<T>(String requestLink)
-        //{
-        //     T searchResult = default(T);
-
-
-
-        //     // Create a New HttpClient object.
-        //     HttpClient client = new HttpClient();
-
-        //     // Call asynchronous network methods in a try/catch block to handle exceptions
-        //     try
-        //     {
-        //          HttpResponseMessage response = await client.GetAsync(requestLink);
-        //          response.EnsureSuccessStatusCode();
-        //          string responseBody = await response.Content.ReadAsStringAsync();
-        //          // Above three lines can be replaced with new helper method below
-        //          // string responseBody = await client.GetStringAsync(uri);
-
-        //          searchResult = JsonConvert.DeserializeObject<T>(responseBody);
-
-
-        //     }
-        //     catch (HttpRequestException e)
-        //     {
-        //          Console.WriteLine("\nException Caught!");
-        //          Console.WriteLine("Message :{0} ", e.Message);
-        //     }
-
-        //     // Need to call dispose on the HttpClient object
-        //     // when done using it, so the app doesn't leak resources
-        //     client.Dispose();
-
-        //     return searchResult;
-
-        //}
     }
-
 }
 
 

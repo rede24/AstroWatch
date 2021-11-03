@@ -10,18 +10,18 @@ namespace AstroWatch.ViewModel
     class ViewModelHome
     {
         Model.ModelHome model;
-
+        ImageOfTheDay imageOfTheDay;
         public ViewModelHome()
         {
-            model = new Model.ModelHome();            
+            model = new Model.ModelHome();
+            imageOfTheDay = Task.Run(() => model.GetImageOfTheDay()).Result;
         }
 
         public string urlImage
         {
             get
             {
-                return Task.Run(() => model.GetImageOfTheDay()).Result.url;
-                
+                return imageOfTheDay.url;
             }
         }
 
@@ -29,7 +29,7 @@ namespace AstroWatch.ViewModel
         {
             get
             {
-                return Task.Run(() => model.GetImageOfTheDay()).Result.title;
+                return imageOfTheDay.title;
             }
         }
 
@@ -37,9 +37,9 @@ namespace AstroWatch.ViewModel
         {
             get
             {
-                return Task.Run(() => model.GetImageOfTheDay()).Result.explanation;
+                return imageOfTheDay.explanation;
             }
         }
-        
+
     }
 }
