@@ -80,20 +80,20 @@
     <Compile Include="Model\NearEarthObjectModel.cs" />
     <Compile Include="Model\SearchModel.cs" />
     <Compile Include="Commands\NavigationCommand.cs" />
-    <Compile Include="Pages\NearEarthObject.xaml.cs">
+    <Compile Include="View\NearEarthObject.xaml.cs">
       <DependentUpon>NearEarthObject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Search.xaml.cs">
+    <Compile Include="View\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SolarSystem.xaml.cs">
+    <Compile Include="View\SolarSystem.xaml.cs">
       <DependentUpon>SolarSystem.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CarouselControl.cs" />
     <Compile Include="UserControls\NavPanel.xaml.cs">
       <DependentUpon>NavPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\HomePage.xaml.cs">
+    <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlIcons.xaml.cs">
@@ -115,15 +115,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\NearEarthObject.xaml">
+    <Page Include="View\NearEarthObject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Search.xaml">
+    <Page Include="View\Search.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SolarSystem.xaml">
+    <Page Include="View\SolarSystem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,7 +135,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\HomePage.xaml">
+    <Page Include="View\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
